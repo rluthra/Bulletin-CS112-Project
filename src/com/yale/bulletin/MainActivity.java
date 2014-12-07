@@ -1,12 +1,16 @@
 package com.yale.bulletin;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
+	public final static String GET_STARTED = "com.yale.bulletin.START";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,5 +35,13 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    public void getStarted(View view) {
+    	Intent intent = new Intent(this, HomeScreenActivity.class);
+    	EditText editText = (EditText) findViewById(R.id.login);
+    	String getStarted = editText.getText().toString();
+    	intent.putExtra(GET_STARTED, getStarted);
+    	startActivity(intent);
     }
 }
