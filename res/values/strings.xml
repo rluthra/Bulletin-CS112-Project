@@ -10,5 +10,8 @@
     <string name="title_activity_home_screen">Event Home Screen</string>
     <string name="hello_world">Hello world!</string>
     <string name="signup">Sign Up</string>
+    <string name="passwordagain">enter password again</string>
+    <string name="enterusername">enter username</string>
+    <string name="enterpassword">enter password</string>
 
 </resources>

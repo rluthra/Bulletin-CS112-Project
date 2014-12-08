@@ -8,6 +8,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import com.parse.Parse;
+import com.parse.ParseObject;
+
 
 public class MainActivity extends ActionBarActivity {
 	public final static String GET_STARTED = "com.yale.bulletin.START";
@@ -16,6 +19,12 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        Parse.initialize(this, "wRxgdWYi8ihBguJB0JUNveNFrEgpoeOi2kn7Zb0T", "YvMevyPJ63zD5cSjDScxyll4q92V8ryHeJoqmXUx");
+        
+        ParseObject username = new ParseObject("username");
+        username.put("name", "rluthra");
+        username.saveInBackground();
     }
 
     @Override
@@ -39,9 +48,10 @@ public class MainActivity extends ActionBarActivity {
     
     public void getStarted(View view) {
     	Intent intent = new Intent(this, HomeScreenActivity.class);
-    	EditText editText = (EditText) findViewById(R.id.login);
-    	String getStarted = editText.getText().toString();
-    	intent.putExtra(GET_STARTED, getStarted);
+//    	EditText editText = (EditText) findViewById(R.id.usernameprompt);
+//    	String getStarted = editText.getText().toString();
     	startActivity(intent);
     }
+    
+    
 }

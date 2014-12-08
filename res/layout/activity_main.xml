@@ -10,21 +10,33 @@
         android:text="@string/welcome"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <TextView
+        android:id="@+id/usernameprompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enterusername"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/username" />
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/passwordprompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enterpassword"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwords"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPassword"
-        android:text="@string/password" >
+        android:inputType="textPassword">
 
         <requestFocus />
     </EditText>
@@ -40,6 +52,7 @@
         android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/signup" />
+        android:text="@string/signup" 
+        android:onClick="getStarted" />
 
 </LinearLayout>
