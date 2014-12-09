@@ -1,6 +1,15 @@
 package com.yale.bulletin;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import com.yale.bulletin.TechnologyDataProvider;
+import com.yale.bulletin.TechnologyEventsAdapter;
+import com.yale.bulletin.R;
+
 import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,13 +17,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 
-public class TechnologyActivity extends ActionBarActivity implements OnClickListener {
-
+public class TechnologyActivity extends Activity implements OnClickListener {
+	HashMap<String, List<String>> Technology_event_name;
+	List<String> Technology_event_details;
+	ExpandableListView Exp_list_technology;
+	TechnologyEventsAdapter adapter;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_technology);
+		
+		Exp_list_technology = (ExpandableListView) findViewById(R.id.exp_list_technology);
+        Technology_event_name = TechnologyDataProvider.getTechnologyInfo();
+        Technology_event_details = new ArrayList<String>(Technology_event_name.keySet());
+        adapter = new TechnologyEventsAdapter(this, Technology_event_name, Technology_event_details);
+        Exp_list_technology.setAdapter(adapter);
 		
 		Button technologyback = (Button) findViewById(R.id.technologyback);
 		technologyback.setOnClickListener(new View.OnClickListener() {

@@ -246,7 +246,7 @@ int id action_context_bar 0x7f05001d
 int id action_menu_divider 0x7f050016
 int id action_menu_presenter 0x7f050017
 int id action_mode_close_button 0x7f050024
-int id action_settings 0x7f05006b
+int id action_settings 0x7f05006e
 int id activity_chooser_view_content 0x7f050025
 int id always 0x7f05000b
 int id beginning 0x7f050011
@@ -256,6 +256,7 @@ int id cancelcreatepost 0x7f050055
 int id categoryoptions 0x7f05004f
 int id categoryradiogroup 0x7f050050
 int id checkbox 0x7f05002d
+int id child_txt_technology 0x7f05006c
 int id choosebusiness 0x7f05005a
 int id choosecityvalue 0x7f05005e
 int id choosehealth 0x7f05005b
@@ -286,6 +287,7 @@ int id eventtime 0x7f050047
 int id eventtimevalue 0x7f050048
 int id eventtitle 0x7f050041
 int id eventtitlevalue 0x7f050042
+int id exp_list_technology 0x7f05006a
 int id expand_activities_button 0x7f050026
 int id expandableListView1 0x7f05003e
 int id expanded_menu 0x7f05002c
@@ -304,6 +306,7 @@ int id middle 0x7f050012
 int id never 0x7f050009
 int id none 0x7f050010
 int id normal 0x7f050000
+int id parent_txt_technology 0x7f05006d
 int id password 0x7f050064
 int id passwordrules 0x7f050065
 int id postevent 0x7f050054
@@ -334,7 +337,7 @@ int id split_action_bar 0x7f05001e
 int id submit_area 0x7f050039
 int id tabMode 0x7f050002
 int id technologyback 0x7f050069
-int id technologytitle 0x7f05006a
+int id technologytitle 0x7f05006b
 int id title 0x7f05002b
 int id top_action_bar 0x7f050020
 int id up 0x7f050021
@@ -376,7 +379,9 @@ int layout activity_login_error 0x7f03001c
 int layout activity_main 0x7f03001d
 int layout activity_sign_up 0x7f03001e
 int layout activity_technology 0x7f03001f
-int layout support_simple_spinner_dropdown_item 0x7f030020
+int layout child_layout_technology 0x7f030020
+int layout parent_layout_technology 0x7f030021
+int layout support_simple_spinner_dropdown_item 0x7f030022
 int menu business 0x7f0c0000
 int menu create_post 0x7f0c0001
 int menu health 0x7f0c0002

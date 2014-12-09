@@ -14,11 +14,13 @@
         android:text="@string/technologygoback" />
 
     <ExpandableListView
-        android:id="@+id/expandableListView1"
+        android:id="@+id/exp_list_technology"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/technologytitle" >
-
+        android:layout_below="@+id/technologytitle" 
+		android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+    	android:divider="#A4C739"
+    	android:dividerHeight="2dp">
     </ExpandableListView>
 
     <TextView
