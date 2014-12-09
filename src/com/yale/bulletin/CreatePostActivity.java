@@ -1,5 +1,7 @@
 package com.yale.bulletin;
 
+import com.parse.ParseObject;
+
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioGroup;
 
 public class CreatePostActivity extends ActionBarActivity implements OnClickListener {
 
@@ -16,21 +20,24 @@ public class CreatePostActivity extends ActionBarActivity implements OnClickList
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_create_post);
 		
+		
+		RadioGroup categoryradio = (RadioGroup) findViewById(R.id.categoryradiogroup);
 		Button postevent = (Button) findViewById(R.id.postevent);
-    	postevent.setOnClickListener(new View.OnClickListener() {
-
-    	    public void onClick(View v) {
-    	        posteventClick(v);
+		
+		postevent.setOnClickListener(new View.OnClickListener() {
+    	    public void onClick(View v) {    
+    	    	sendEventToParseClick(v);
+    	    	posteventClick(v);
     	    }
     	});
     	
     	Button cancelcreatepost = (Button) findViewById(R.id.cancelcreatepost);
     	cancelcreatepost.setOnClickListener(new View.OnClickListener() {
-
     	    public void onClick(View v) {
     	        posteventClick(v);
     	    }
     	});
+	
 	}
 
 	@Override
@@ -50,6 +57,36 @@ public class CreatePostActivity extends ActionBarActivity implements OnClickList
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	public void sendEventToParseClick(View view) {
+		ParseObject Event = new ParseObject("Event");
+		EditText name = (EditText)findViewById(R.id.eventtitlevalue);
+		String eventname = name.getText().toString();
+		Event.put("name", eventname);
+		EditText host = (EditText)findViewById(R.id.eventhostvalue);
+		String eventhost = host.getText().toString();
+		Event.put("host", eventhost);
+		EditText description = (EditText)findViewById(R.id.eventdescriptionvalue);
+		String eventdescription = description.getText().toString();
+		Event.put("description", eventdescription);
+		EditText date = (EditText)findViewById(R.id.eventdatevalue);
+		String eventdate = date.getText().toString();
+		Event.put("date", eventdate);
+		EditText time = (EditText)findViewById(R.id.eventtimevalue);
+		String eventtime = time.getText().toString();
+		Event.put("time", eventtime);
+		EditText location = (EditText)findViewById(R.id.eventlocationvalue);
+		String eventlocation = location.getText().toString();
+		Event.put("location", eventlocation);
+		EditText city = (EditText)findViewById(R.id.eventcityvalue);
+		String eventcity = city.getText().toString();
+		Event.put("city", eventcity);
+		Event.saveInBackground();
+	}
+	
+	public void eventCategoryClick(RadioGroup group, int checkedId) {
+		
 	}
 
 	public void posteventClick(View v) {

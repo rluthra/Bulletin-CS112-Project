@@ -45,5 +45,6 @@
     <string name="healthgoback">back</string>
     <string name="businessgoback">back</string>
     <string name="cancelcreatepost">cancel</string>
+    <string name="citytosearch">city, state to search (e.g. new haven, ct)</string>
 
 </resources>

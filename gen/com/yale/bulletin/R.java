@@ -1099,6 +1099,7 @@ containing a value of this type.
         public static final int businesstitle=0x7f05003f;
         public static final int cancelcreatepost=0x7f050055;
         public static final int categoryoptions=0x7f05004f;
+        public static final int categoryradiogroup=0x7f050050;
         public static final int checkbox=0x7f05002d;
         public static final int choosebusiness=0x7f05005a;
         public static final int choosecityvalue=0x7f05005e;
@@ -1133,7 +1134,6 @@ containing a value of this type.
         public static final int expand_activities_button=0x7f050026;
         public static final int expandableListView1=0x7f05003e;
         public static final int expanded_menu=0x7f05002c;
-        public static final int group1=0x7f050050;
         public static final int healthback=0x7f050056;
         public static final int healthtitle=0x7f050057;
         public static final int home=0x7f050014;
@@ -1310,6 +1310,7 @@ containing a value of this type.
         public static final int categorytechnology=0x7f0a002b;
         public static final int choosepassword=0x7f0a0021;
         public static final int chooseusername=0x7f0a0020;
+        public static final int citytosearch=0x7f0a0039;
         public static final int createevent=0x7f0a0014;
         public static final int enterpassword=0x7f0a0018;
         public static final int enterusername=0x7f0a0017;

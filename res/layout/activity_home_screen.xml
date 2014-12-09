@@ -75,10 +75,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/categoryoptions"
-        android:layout_alignStart="@+id/categoryoptions"
         android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/categoryoptions"
         android:layout_marginTop="28dp"
-        android:text="@string/eventcity"
+        android:text="@string/citytosearch"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText

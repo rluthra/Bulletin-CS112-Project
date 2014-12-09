@@ -24,17 +24,6 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
         
         Parse.initialize(this, "wRxgdWYi8ihBguJB0JUNveNFrEgpoeOi2kn7Zb0T", "YvMevyPJ63zD5cSjDScxyll4q92V8ryHeJoqmXUx");
         
-        
-        
-        ParseObject Event = new ParseObject("Event");
-        Event.put("name", "Medical Professions Panel");
-        Event.put("description", "A critical look at different career paths in medicine");
-        Event.put("date", "Dec. 8, 2014");
-        Event.put("time", "8:00 pm");
-        Event.put("location", "WLH 119");
-        Event.put("host", "Career Services");
-        Event.saveInBackground();
-        
         Button signup = (Button) findViewById(R.id.signup);
     	signup.setOnClickListener(new View.OnClickListener() {
 

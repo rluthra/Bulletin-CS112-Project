@@ -117,7 +117,7 @@
               android:text="@string/eventcategory"
               android:textAppearance="?android:attr/textAppearanceMedium" />
 
-	<RadioGroup android:id="@+id/group1" android:layout_width="fill_parent"
+	<RadioGroup android:id="@+id/categoryradiogroup" android:layout_width="fill_parent"
         android:layout_height="wrap_content" android:orientation="vertical">
 	    <RadioButton
               android:id="@+id/radiobusiness"
@@ -140,7 +140,8 @@
               android:id="@+id/postevent"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:text="@string/postevent" />
+              android:text="@string/postevent"
+              android:onClick="sendEventToParse"/>
 
           <Button
               android:id="@+id/cancelcreatepost"

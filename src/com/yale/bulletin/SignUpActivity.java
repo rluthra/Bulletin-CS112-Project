@@ -28,7 +28,6 @@ public class SignUpActivity extends ActionBarActivity implements OnClickListener
     	    }
     	});
     	
-    	
 	}
 
 	@Override
