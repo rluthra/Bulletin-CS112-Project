@@ -11,7 +11,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/usernameprompt"
+        android:id="@+id/chooseusername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/enterusername"
@@ -25,14 +25,14 @@
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/passwordprompt"
+        android:id="@+id/choosepassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/enterpassword"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/passwords"
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"

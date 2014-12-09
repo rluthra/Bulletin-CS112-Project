@@ -1,0 +1,153 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+      <LinearLayout
+          android:id="@+id/container"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical" >
+
+          <TextView
+              android:id="@+id/eventtitle"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/eventtitle"
+              android:textAppearance="?android:attr/textAppearanceMedium" />
+
+          <EditText
+              android:id="@+id/eventtitlevalue"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:ems="10"
+              android:inputType="text" >
+
+              <requestFocus />
+          </EditText>
+
+          <TextView
+              android:id="@+id/eventhost"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/eventhost"
+              android:textAppearance="?android:attr/textAppearanceMedium" />
+
+          <EditText
+              android:id="@+id/eventhostvalue"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:ems="10"
+              android:inputType="text" />
+
+          <TextView
+              android:id="@+id/eventdescription"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/eventdescription"
+              android:textAppearance="?android:attr/textAppearanceMedium" />
+
+          <EditText
+              android:id="@+id/eventdescriptionvalue"
+              android:layout_width="match_parent"
+              android:layout_height="88dp"
+              android:ems="10"
+              android:inputType="textMultiLine" />
+
+          <TextView
+              android:id="@+id/eventtime"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/eventtime"
+              android:textAppearance="?android:attr/textAppearanceMedium" />
+
+          <EditText
+              android:id="@+id/eventtimevalue"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:ems="10"
+              android:inputType="time" />
+
+          <TextView
+              android:id="@+id/eventdate"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/eventdate"
+              android:textAppearance="?android:attr/textAppearanceMedium" />
+
+          <EditText
+              android:id="@+id/eventdatevalue"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:ems="10"
+              android:inputType="date" />
+
+          <TextView
+              android:id="@+id/eventlocation"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/eventlocation"
+              android:textAppearance="?android:attr/textAppearanceMedium" />
+
+          <EditText
+              android:id="@+id/eventlocationvalue"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:ems="10"
+              android:inputType="text|textPostalAddress" />
+
+          <TextView
+              android:id="@+id/eventcity"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/eventcity"
+              android:textAppearance="?android:attr/textAppearanceMedium" />
+
+          <EditText
+              android:id="@+id/eventcityvalue"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:ems="10"
+              android:inputType="text" />
+
+          <TextView
+              android:id="@+id/categoryoptions"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/eventcategory"
+              android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<RadioGroup android:id="@+id/group1" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:orientation="vertical">
+	    <RadioButton
+              android:id="@+id/radiobusiness"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/categorybusiness" />
+		 <RadioButton
+              android:id="@+id/radiohealth"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/categoryhealth" />
+          <RadioButton
+              android:id="@+id/radiotechnology"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/categorytechnology" />
+          </RadioGroup>
+          
+          <Button
+              android:id="@+id/postevent"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/postevent" />
+
+          <Button
+              android:id="@+id/cancelcreatepost"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/cancelcreatepost" />
+
+      </LinearLayout>
+
+ </ScrollView>

@@ -6,15 +6,17 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.parse.Parse;
 import com.parse.ParseObject;
 
 
-public class MainActivity extends ActionBarActivity {
-	public final static String GET_STARTED = "com.yale.bulletin.START";
+public class MainActivity extends ActionBarActivity implements OnClickListener {
 
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +24,34 @@ public class MainActivity extends ActionBarActivity {
         
         Parse.initialize(this, "wRxgdWYi8ihBguJB0JUNveNFrEgpoeOi2kn7Zb0T", "YvMevyPJ63zD5cSjDScxyll4q92V8ryHeJoqmXUx");
         
-        ParseObject username = new ParseObject("username");
-        username.put("name", "rluthra");
-        username.saveInBackground();
+        
+        
+        ParseObject Event = new ParseObject("Event");
+        Event.put("name", "Medical Professions Panel");
+        Event.put("description", "A critical look at different career paths in medicine");
+        Event.put("date", "Dec. 8, 2014");
+        Event.put("time", "8:00 pm");
+        Event.put("location", "WLH 119");
+        Event.put("host", "Career Services");
+        Event.saveInBackground();
+        
+        Button signup = (Button) findViewById(R.id.signup);
+    	signup.setOnClickListener(new View.OnClickListener() {
+
+    	    public void onClick(View v) {
+    	        signupClick(v);
+    	    }
+    	});
+    	
+    	Button login = (Button) findViewById(R.id.login);
+    	login.setOnClickListener(new View.OnClickListener() {
+
+    	    public void onClick(View v) {
+    	        loginClick(v);
+    	    }
+    	});
+    	
+        
     }
 
     @Override
@@ -46,12 +73,18 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
     
-    public void getStarted(View view) {
-    	Intent intent = new Intent(this, HomeScreenActivity.class);
-//    	EditText editText = (EditText) findViewById(R.id.usernameprompt);
-//    	String getStarted = editText.getText().toString();
+    public void signupClick(View v) {
+    	Intent intent = new Intent(this, SignUpActivity.class);
     	startActivity(intent);
     }
     
-    
+    public void loginClick(View v) {
+    	Intent intent = new Intent(this, HomeScreenActivity.class);
+    	startActivity(intent);
+    }
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
+	}
 }
