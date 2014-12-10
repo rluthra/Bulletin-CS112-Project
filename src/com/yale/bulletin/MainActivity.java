@@ -1,5 +1,6 @@
 package com.yale.bulletin;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -10,8 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.parse.Parse;
-import com.parse.ParseObject;
+import com.parse.*;
 
 
 public class MainActivity extends ActionBarActivity implements OnClickListener {
@@ -32,11 +32,25 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
     	    }
     	});
     	
-    	Button login = (Button) findViewById(R.id.login);
+    	Button login = (Button) findViewById(R.id.loginsignup);
     	login.setOnClickListener(new View.OnClickListener() {
-
-    	    public void onClick(View v) {
-    	        loginClick(v);
+    	    public void onClick(final View v) {
+    	    	EditText user = (EditText)findViewById(R.id.username);
+    			String username = user.getText().toString();
+    			EditText pass = (EditText)findViewById(R.id.password);
+    			String password = pass.getText().toString();
+    	    	ParseUser.logInInBackground(username, password, new LogInCallback() {
+    	    		  public void done(ParseUser user, ParseException e) {
+    	    		    if (user != null) {
+    	    		    	loginClick(v);
+    	    		    } else {
+    	    		    	AlertDialog wrongusernameorpassword = new AlertDialog.Builder(MainActivity.this)
+	    					.setTitle("incorrect login credentials or user doesn't exist")
+	    			    	.show();
+    	    		    }
+    	    		  }
+    	    		});
+    	        
     	    }
     	});
     	

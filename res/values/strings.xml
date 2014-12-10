@@ -48,5 +48,7 @@
     <string name="citytosearch">city, state to search (lowercase, e.g. new haven, ct)</string>
     <string name="categorywarning">if you do not choose a category, your post will not be displayed</string>
     <string name="bulletinlogo">Bulletin Logo</string>
+    <string name="enteremail">enter email address</string>
+    <string name="signupgoback">back</string>
 
 </resources>
