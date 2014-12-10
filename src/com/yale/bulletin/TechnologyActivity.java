@@ -10,6 +10,7 @@ import com.yale.bulletin.R;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,7 +21,7 @@ import android.widget.Button;
 import android.widget.ExpandableListView;
 
 public class TechnologyActivity extends Activity implements OnClickListener {
-	HashMap<String, List<String>> Technology_event_name;
+	List<List<String>> Technology_event_name;
 	List<String> Technology_event_details;
 	ExpandableListView Exp_list_technology;
 	TechnologyEventsAdapter adapter;
@@ -30,10 +31,19 @@ public class TechnologyActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_technology);
 		
+		Bundle extras = getIntent().getExtras();
+		String value = "";
+		if(extras != null){
+			value = extras.getString("CITY");
+			//new AlertDialog.Builder(this)
+			//.setTitle(value)
+			//.show();
+		}
+		
+		
 		Exp_list_technology = (ExpandableListView) findViewById(R.id.exp_list_technology);
-        Technology_event_name = TechnologyDataProvider.getTechnologyInfo();
-        Technology_event_details = new ArrayList<String>(Technology_event_name.keySet());
-        adapter = new TechnologyEventsAdapter(this, Technology_event_name, Technology_event_details);
+        Technology_event_name = TechnologyDataProvider.getTechnologyInfo(value);
+        adapter = new TechnologyEventsAdapter(this, Technology_event_name);
         Exp_list_technology.setAdapter(adapter);
 		
 		Button technologyback = (Button) findViewById(R.id.technologyback);

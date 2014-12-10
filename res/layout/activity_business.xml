@@ -14,12 +14,15 @@
 		 android:text="@string/businessgoback" />
 
 	<ExpandableListView
-		 android:id="@+id/expandableListView1"
-	 	 android:layout_width="match_parent"
-		 android:layout_height="wrap_content"
-		 android:layout_below="@+id/businesstitle" >
+        android:id="@+id/exp_list_business"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/businesstitle" 
+		android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+    	android:divider="#A4C739"
+    	android:dividerHeight="2dp">
+    </ExpandableListView>
 
-	</ExpandableListView>
 
 	<TextView
 		android:id="@+id/businesstitle"

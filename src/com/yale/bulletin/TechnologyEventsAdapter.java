@@ -14,22 +14,22 @@ import android.widget.TextView;
 
 public class TechnologyEventsAdapter extends BaseExpandableListAdapter{
 	private Context ctx;
-	private HashMap<String, List<String>> Technology_Event_Name;
-	private List<String> Technology_Event_Details;
+	//*****
+	private List<List<String>> Technology_Event_Name;
+	//private List<String> Technology_Event_Details;
 	
-	public TechnologyEventsAdapter(Context ctx, HashMap<String, List<String>> Technology_Event_Name, List<String> Technology_Event_Details)
+	public TechnologyEventsAdapter(Context ctx, List<List<String>> Technology_Event_Name)
 	{
 		this.ctx = ctx;
 		this.Technology_Event_Name = Technology_Event_Name;
-		this.Technology_Event_Details = Technology_Event_Details;
 		
 	}
 
 	@Override
 	public Object getChild(int parent, int child) {
 	
-		
-		return Technology_Event_Name.get(Technology_Event_Details.get(parent)).get(child);
+		//****
+		return Technology_Event_Name.get(parent).get(child+1);
 	}
 
 	@Override
@@ -58,19 +58,20 @@ public class TechnologyEventsAdapter extends BaseExpandableListAdapter{
 	@Override
 	public int getChildrenCount(int arg0) {
 		
-		return Technology_Event_Name.get(Technology_Event_Details.get(arg0)).size();
+		//return Technology_Event_Name.get(arg0).size()-1;
+		return 5;
 	}
 
 	@Override
 	public Object getGroup(int arg0) {
 		// TODO Auto-generated method stub
-		return Technology_Event_Details.get(arg0);
+		return Technology_Event_Name.get(arg0).get(0);
 	}
 
 	@Override
 	public int getGroupCount() {
 		// TODO Auto-generated method stub
-		return Technology_Event_Details.size();
+		return Technology_Event_Name.size();
 	}
 
 	@Override

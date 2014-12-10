@@ -7,14 +7,27 @@
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="center_horizontal"
         android:text="@string/welcome"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_bulletin"
+        android:contentDescription="@string/bulletinlogo" />
 
     <TextView
         android:id="@+id/chooseusername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/enterusername"
+        android:layout_marginLeft="10dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
@@ -28,6 +41,7 @@
         android:id="@+id/choosepassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:text="@string/enterpassword"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 

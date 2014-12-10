@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 public class CreatePostActivity extends ActionBarActivity implements OnClickListener {
@@ -60,29 +61,38 @@ public class CreatePostActivity extends ActionBarActivity implements OnClickList
 	}
 	
 	public void sendEventToParseClick(View view) {
-		ParseObject Event = new ParseObject("Event");
+		ParseObject event = new ParseObject("Event");
 		EditText name = (EditText)findViewById(R.id.eventtitlevalue);
 		String eventname = name.getText().toString();
-		Event.put("name", eventname);
+		event.put("name", eventname);
 		EditText host = (EditText)findViewById(R.id.eventhostvalue);
 		String eventhost = host.getText().toString();
-		Event.put("host", eventhost);
+		event.put("host", eventhost);
 		EditText description = (EditText)findViewById(R.id.eventdescriptionvalue);
 		String eventdescription = description.getText().toString();
-		Event.put("description", eventdescription);
+		event.put("description", eventdescription);
 		EditText date = (EditText)findViewById(R.id.eventdatevalue);
 		String eventdate = date.getText().toString();
-		Event.put("date", eventdate);
+		event.put("date", eventdate);
 		EditText time = (EditText)findViewById(R.id.eventtimevalue);
 		String eventtime = time.getText().toString();
-		Event.put("time", eventtime);
+		event.put("time", eventtime);
 		EditText location = (EditText)findViewById(R.id.eventlocationvalue);
 		String eventlocation = location.getText().toString();
-		Event.put("location", eventlocation);
+		event.put("location", eventlocation);
 		EditText city = (EditText)findViewById(R.id.eventcityvalue);
 		String eventcity = city.getText().toString();
-		Event.put("city", eventcity);
-		Event.saveInBackground();
+		event.put("city", eventcity);
+		RadioGroup categoryradiogroup = (RadioGroup) findViewById(R.id.categoryradiogroup);
+		int selected = categoryradiogroup.getCheckedRadioButtonId();
+		if (selected == -1){
+			event.put("category", "uncategorized");
+		} else {
+			RadioButton cat = (RadioButton) findViewById(selected);
+			String category = (String) cat.getText();
+			event.put("category", category);
+		}
+		event.saveInBackground();
 	}
 	
 	public void eventCategoryClick(RadioGroup group, int checkedId) {

@@ -25,9 +25,9 @@
     <string name="title_activity_create_post">CreatePostActivity</string>
     <string name="eventtitle">title of event</string>
     <string name="eventhost">host organization</string>
-    <string name="eventdescription">event description (20 words or less)</string>
-    <string name="eventtime">time of event</string>
-    <string name="eventdate">date of event</string>
+    <string name="eventdescription">event description</string>
+    <string name="eventtime">time of event (military time)</string>
+    <string name="eventdate">date of event (dd/mm/yy)</string>
     <string name="eventlocation">location of event</string>
     <string name="postevent">post event to bulletin board</string>
     <string name="eventcategory">choose an event category</string>
@@ -36,7 +36,7 @@
     <string name="categoryhealth">health professions</string>
     <string name="title_activity_business">BusinessActivity</string>
     <string name="title_activity_health">HealthActivity</string>
-    <string name="eventcity">city, state of event (e.g. new haven, ct)</string>
+    <string name="eventcity">city, state of event (lowercase, e.g. new haven, ct)</string>
     <string name="title_activity_technology">TechnologyActivity</string>
     <string name="technologytitle">these are the local technology and design events</string>
     <string name="healthtitle">these are the local health professions events</string>
@@ -45,6 +45,8 @@
     <string name="healthgoback">back</string>
     <string name="businessgoback">back</string>
     <string name="cancelcreatepost">cancel</string>
-    <string name="citytosearch">city, state to search (e.g. new haven, ct)</string>
+    <string name="citytosearch">city, state to search (lowercase, e.g. new haven, ct)</string>
+    <string name="categorywarning">if you do not choose a category, your post will not be displayed</string>
+    <string name="bulletinlogo">Bulletin Logo</string>
 
 </resources>

@@ -117,8 +117,16 @@
               android:text="@string/eventcategory"
               android:textAppearance="?android:attr/textAppearanceMedium" />
 
+          <TextView
+              android:id="@+id/categorywarning"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/categorywarning"
+              android:textAppearance="?android:attr/textAppearanceSmall" />
+
 	<RadioGroup android:id="@+id/categoryradiogroup" android:layout_width="fill_parent"
         android:layout_height="wrap_content" android:orientation="vertical">
+
 	    <RadioButton
               android:id="@+id/radiobusiness"
               android:layout_width="wrap_content"

@@ -1,5 +1,7 @@
 package com.yale.bulletin;
 
+import java.util.List;
+
 import android.support.v7.app.ActionBarActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,13 +11,35 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 
 public class BusinessActivity extends ActionBarActivity implements OnClickListener {
 
+	List<List<String>> Business_event_name;
+	List<String> Business_event_details;
+	ExpandableListView Exp_list_business;
+	BusinessEventsAdapter adapter;
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_business);
+		
+		Bundle extras = getIntent().getExtras();
+		String value = "";
+		if(extras != null){
+			value = extras.getString("CITY");
+			//new AlertDialog.Builder(this)
+			//.setTitle(value)
+			//.show();
+		}
+		
+		Exp_list_business = (ExpandableListView) findViewById(R.id.exp_list_business);
+        Business_event_name = BusinessDataProvider.getBusinessInfo(value);
+        adapter = new BusinessEventsAdapter(this, Business_event_name);
+        Exp_list_business.setAdapter(adapter);
+
 		
 		Button businessback = (Button) findViewById(R.id.businessback);
 		businessback.setOnClickListener(new View.OnClickListener() {

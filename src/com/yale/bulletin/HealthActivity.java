@@ -1,5 +1,7 @@
 package com.yale.bulletin;
 
+import java.util.List;
+
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,14 +10,32 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 
 public class HealthActivity extends ActionBarActivity implements OnClickListener {
-
+	List<List<String>> Health_event_name;
+	List<String> Health_event_details;
+	ExpandableListView Exp_list_health;
+	HealthEventsAdapter adapter;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_health);
 		
+		Bundle extras = getIntent().getExtras();
+		String value = "";
+		if(extras != null){
+			value = extras.getString("CITY");
+			//new AlertDialog.Builder(this)
+			//.setTitle(value)
+			//.show();
+		}
+		
+		Exp_list_health = (ExpandableListView) findViewById(R.id.exp_list_health);
+        Health_event_name = HealthDataProvider.getHealthInfo(value);
+        adapter = new HealthEventsAdapter(this, Health_event_name);
+        Exp_list_health.setAdapter(adapter);
 		
 		Button healthback = (Button) findViewById(R.id.healthback);
 		healthback.setOnClickListener(new View.OnClickListener() {

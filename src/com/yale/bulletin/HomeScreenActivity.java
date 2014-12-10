@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class HomeScreenActivity extends ActionBarActivity implements OnClickListener {
 
@@ -89,16 +90,25 @@ public class HomeScreenActivity extends ActionBarActivity implements OnClickList
 	
 	public void choosebusinessClick(View v) {
     	Intent intent = new Intent(this, BusinessActivity.class);
+    	EditText chosencity = (EditText)findViewById(R.id.choosecityvalue);
+		String eventcity = chosencity.getText().toString();
+		intent.putExtra("CITY", eventcity);
     	startActivity(intent);
     }
 	
 	public void choosehealthClick(View v) {
     	Intent intent = new Intent(this, HealthActivity.class);
+    	EditText chosencity = (EditText)findViewById(R.id.choosecityvalue);
+		String eventcity = chosencity.getText().toString();
+		intent.putExtra("CITY", eventcity);
     	startActivity(intent);
     }
 	
 	public void choosetechnologyClick(View v) {
     	Intent intent = new Intent(this, TechnologyActivity.class);
+    	EditText chosencity = (EditText)findViewById(R.id.choosecityvalue);
+		String eventcity = chosencity.getText().toString();
+		intent.putExtra("CITY", eventcity);
     	startActivity(intent);
     }
 
