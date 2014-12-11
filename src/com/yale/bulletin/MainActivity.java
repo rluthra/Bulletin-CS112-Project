@@ -32,7 +32,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
     	    }
     	});
     	
-    	Button login = (Button) findViewById(R.id.loginsignup);
+    	Button login = (Button) findViewById(R.id.createuser);
     	login.setOnClickListener(new View.OnClickListener() {
     	    public void onClick(final View v) {
     	    	EditText user = (EditText)findViewById(R.id.username);

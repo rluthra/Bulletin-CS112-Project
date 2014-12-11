@@ -292,6 +292,7 @@ int id clip_vertical 0x7f05000e
 int id collapseActionView 0x7f05001f
 int id container 0x7f05004d
 int id createevent 0x7f05006b
+int id createuser 0x7f050079
 int id default_activity_button 0x7f050039
 int id dialog 0x7f050020
 int id disableHome 0x7f05001a
@@ -335,7 +336,6 @@ int id left 0x7f050006
 int id listMode 0x7f050013
 int id list_item 0x7f05003a
 int id loginerror 0x7f05007b
-int id loginsignup 0x7f050079
 int id middle 0x7f050024
 int id never 0x7f05001b
 int id none 0x7f050022
@@ -464,6 +464,7 @@ int string choosepassword 0x7f0a0021
 int string chooseusername 0x7f0a0020
 int string citytosearch 0x7f0a0039
 int string createevent 0x7f0a0014
+int string createuser 0x7f0a003e
 int string enteremail 0x7f0a003c
 int string enterpassword 0x7f0a0018
 int string enterusername 0x7f0a0017

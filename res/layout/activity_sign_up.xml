@@ -70,11 +70,11 @@
         android:inputType="textEmailAddress" />
 
     <Button
-        android:id="@+id/loginsignup"
+        android:id="@+id/createuser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="getStarted"
-        android:text="@string/login" />
+        android:text="@string/createuser" />
 
     <Button
         android:id="@+id/signupgoback"

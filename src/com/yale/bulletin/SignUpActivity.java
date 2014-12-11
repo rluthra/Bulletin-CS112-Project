@@ -4,7 +4,8 @@ import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
-import android.support.v7.app.ActionBarActivity;
+
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.ParseException;
@@ -17,7 +18,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class SignUpActivity extends ActionBarActivity implements OnClickListener {
+public class SignUpActivity extends Activity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +33,10 @@ public class SignUpActivity extends ActionBarActivity implements OnClickListener
     	    }
     	});
 		
-		Button loginsignup = (Button) findViewById(R.id.loginsignup);
+		Button loginsignup = (Button) findViewById(R.id.createuser);
     	loginsignup.setOnClickListener(new View.OnClickListener() {
 
-    	    public void onClick(final View v) {
+    	    public void onClick(View v) {
     	    	EditText newuser = (EditText)findViewById(R.id.usernamesignup);
     			String username = newuser.getText().toString();
     			EditText pass = (EditText)findViewById(R.id.passwordsignup);
@@ -50,18 +51,24 @@ public class SignUpActivity extends ActionBarActivity implements OnClickListener
     	    		user.setEmail(useremail);
     	    		//**************************
     	    		// this is WHERE THE PROBLEM IS -- not entering this loop
-    	    		
+    	    	
     	    		user.signUpInBackground(new SignUpCallback() {
-    	    			  public void done(ParseException e) {
+    	    			public void done(ParseException e) {
     	    			    if (e == null) {
-    	    			    	loginsignupClick(v);
+    	    			    //loginsignupClick(v);
+    	    			    	AlertDialog successfuluser = new AlertDialog.Builder(SignUpActivity.this)
+    	    					.setTitle("you are now a bulletin user")
+    	    			    	.show();
     	    			    } else {
+    	    			    	//
+    	    			    	Log.d("error", e.toString());
     	    			    	AlertDialog repeatusernameorpassword = new AlertDialog.Builder(SignUpActivity.this)
-    	    					.setTitle("this username or email adress is already in use")
+    	    					.setTitle("this username or email address is already in use")
     	    			    	.show();
     	    			    }
     	    			  }
     	    		
+    	    			
 
 						@Override
 						public void done(com.parse.ParseException e) {
@@ -117,5 +124,6 @@ public class SignUpActivity extends ActionBarActivity implements OnClickListener
     	Intent intent = new Intent(this, MainActivity.class);
     	startActivity(intent);
     }
+	
 	
 }

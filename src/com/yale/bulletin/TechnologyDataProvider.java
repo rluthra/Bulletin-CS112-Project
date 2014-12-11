@@ -24,7 +24,7 @@ public class TechnologyDataProvider extends Activity {
 			techEvents.whereEqualTo("city", citytosearch);
 			techEvents.orderByAscending("date");
 			techEvents.addAscendingOrder("time");
-			techEvents.setLimit(20);
+			techEvents.setLimit(40);
 			try {
 				List<ParseObject> techEventList = techEvents.find();
 				int numberevents = techEventList.size();

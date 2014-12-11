@@ -1327,6 +1327,7 @@ containing a value of this type.
         public static final int collapseActionView=0x7f05001f;
         public static final int container=0x7f05004d;
         public static final int createevent=0x7f05006b;
+        public static final int createuser=0x7f050079;
         public static final int default_activity_button=0x7f050039;
         public static final int dialog=0x7f050020;
         public static final int disableHome=0x7f05001a;
@@ -1370,7 +1371,6 @@ containing a value of this type.
         public static final int listMode=0x7f050013;
         public static final int list_item=0x7f05003a;
         public static final int loginerror=0x7f05007b;
-        public static final int loginsignup=0x7f050079;
         public static final int middle=0x7f050024;
         public static final int never=0x7f05001b;
         public static final int none=0x7f050022;
@@ -1556,6 +1556,7 @@ containing a value of this type.
         public static final int chooseusername=0x7f0a0020;
         public static final int citytosearch=0x7f0a0039;
         public static final int createevent=0x7f0a0014;
+        public static final int createuser=0x7f0a003e;
         public static final int enteremail=0x7f0a003c;
         public static final int enterpassword=0x7f0a0018;
         public static final int enterusername=0x7f0a0017;
