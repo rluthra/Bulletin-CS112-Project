@@ -33,11 +33,11 @@ public class HealthDataProvider extends Activity {
 		    		List<String> healthEvent = new ArrayList<String>();
 		    		ParseObject event = healthEventList.get(i);
 		    		healthEvent.add(event.getString("name"));
-		    		healthEvent.add(event.getString("host"));
-		    		healthEvent.add(event.getString("description"));
-		    		healthEvent.add(event.getString("time"));
-		    		healthEvent.add(event.getString("date"));
-		    		healthEvent.add(event.getString("location"));
+		    		healthEvent.add("host:\n" + event.getString("host"));
+		    		healthEvent.add("description:\n" + event.getString("description"));
+		    		healthEvent.add("time:\n" + event.getString("time"));
+		    		healthEvent.add("date:\n" + event.getString("date"));
+		    		healthEvent.add("location:\n" + event.getString("location"));
 		    		HealthEventsDetails.add(healthEvent);
 		    	}
 			} catch (ParseException e) {

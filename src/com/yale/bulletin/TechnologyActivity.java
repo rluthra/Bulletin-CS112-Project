@@ -45,6 +45,15 @@ public class TechnologyActivity extends Activity implements OnClickListener {
         Technology_event_name = TechnologyDataProvider.getTechnologyInfo(value);
         adapter = new TechnologyEventsAdapter(this, Technology_event_name);
         Exp_list_technology.setAdapter(adapter);
+        if (value.equals("")){
+        	AlertDialog choosecity= new AlertDialog.Builder(TechnologyActivity.this)
+			.setTitle("please choose a city to search")
+	    	.show();
+        } else if (Technology_event_name.size() == 0){
+        	AlertDialog noevents = new AlertDialog.Builder(TechnologyActivity.this)
+			.setTitle("there are no technology & design events posted in " + value)
+	    	.show();
+        }
 		
 		Button technologyback = (Button) findViewById(R.id.technologyback);
 		technologyback.setOnClickListener(new View.OnClickListener() {

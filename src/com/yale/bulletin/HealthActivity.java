@@ -3,6 +3,7 @@ package com.yale.bulletin;
 import java.util.List;
 
 import android.support.v7.app.ActionBarActivity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -36,7 +37,17 @@ public class HealthActivity extends ActionBarActivity implements OnClickListener
         Health_event_name = HealthDataProvider.getHealthInfo(value);
         adapter = new HealthEventsAdapter(this, Health_event_name);
         Exp_list_health.setAdapter(adapter);
-		
+        if (value.equals("")){
+        	AlertDialog choosecity= new AlertDialog.Builder(HealthActivity.this)
+			.setTitle("please choose a city to search")
+	    	.show();
+        } else if (Health_event_name.size() == 0){
+        	AlertDialog noevents = new AlertDialog.Builder(HealthActivity.this)
+			.setTitle("there are no health professions events posted in " + value)
+	    	.show();
+        }
+        
+        
 		Button healthback = (Button) findViewById(R.id.healthback);
 		healthback.setOnClickListener(new View.OnClickListener() {
 

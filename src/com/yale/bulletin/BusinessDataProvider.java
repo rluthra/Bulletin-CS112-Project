@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.view.View;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,24 +27,25 @@ public class BusinessDataProvider extends Activity {
 			busEvents.addAscendingOrder("time");
 			busEvents.setLimit(20);
 			try {
-				List<ParseObject> busEventList = busEvents.find();
-				int numberevents = busEventList.size();
-		    	for (int i = 0; i < numberevents; i++) {
-		    		String eventnum = Integer.toString(i);
-		    		List<String> busEvent = new ArrayList<String>();
-		    		ParseObject event = busEventList.get(i);
-		    			busEvent.add(event.getString("name"));
-		    			busEvent.add(event.getString("host"));
-		    			busEvent.add(event.getString("description"));
-		    			busEvent.add(event.getString("time"));
-		    			busEvent.add(event.getString("date"));
-		    			busEvent.add(event.getString("location"));
-		    		BusinessEventsDetails.add(busEvent);
-		    	}
-			} catch (ParseException e) {
+					List<ParseObject> busEventList = busEvents.find();
+					int numberevents = busEventList.size();
+					for (int i = 0; i < numberevents; i++) {
+						String eventnum = Integer.toString(i);
+						List<String> busEvent = new ArrayList<String>();
+						ParseObject event = busEventList.get(i);
+							busEvent.add(event.getString("name"));
+							busEvent.add("host:\n" + event.getString("host"));
+							busEvent.add("description:\n" + event.getString("description"));
+							busEvent.add("time:\n" + event.getString("time"));
+							busEvent.add("date:\n" + event.getString("date"));
+							busEvent.add("location:\n" + event.getString("location"));
+							BusinessEventsDetails.add(busEvent);
+					}
+			}catch (ParseException e) {
 				e.printStackTrace();
 				throw new RuntimeException (e);
 			}
+			
 		
 		return BusinessEventsDetails;
 		

@@ -33,11 +33,11 @@ public class TechnologyDataProvider extends Activity {
 		    		List<String> techEvent = new ArrayList<String>();
 		    		ParseObject event = techEventList.get(i);
 		    			techEvent.add(event.getString("name"));
-		    			techEvent.add(event.getString("host"));
-		    			techEvent.add(event.getString("description"));
-		    			techEvent.add(event.getString("time"));
-		    			techEvent.add(event.getString("date"));
-		    			techEvent.add(event.getString("location"));
+		    			techEvent.add("host:\n" + event.getString("host"));
+		    			techEvent.add("description:\n" + event.getString("description"));
+		    			techEvent.add("time:\n" + event.getString("time"));
+		    			techEvent.add("date:\n" + event.getString("date"));
+		    			techEvent.add("location:\n" + event.getString("location"));
 		    		TechnologyEventsDetails.add(techEvent);
 		    	}
 			} catch (ParseException e) {

@@ -36,7 +36,7 @@ public class SignUpActivity extends Activity implements OnClickListener {
 		Button loginsignup = (Button) findViewById(R.id.createuser);
     	loginsignup.setOnClickListener(new View.OnClickListener() {
 
-    	    public void onClick(View v) {
+    	    public void onClick(final View v) {
     	    	EditText newuser = (EditText)findViewById(R.id.usernamesignup);
     			String username = newuser.getText().toString();
     			EditText pass = (EditText)findViewById(R.id.passwordsignup);
@@ -49,30 +49,41 @@ public class SignUpActivity extends Activity implements OnClickListener {
     	    		user.setUsername(username);
     	    		user.setPassword(password);
     	    		user.setEmail(useremail);
-    	    		//**************************
-    	    		// this is WHERE THE PROBLEM IS -- not entering this loop
     	    	
     	    		user.signUpInBackground(new SignUpCallback() {
-    	    			public void done(ParseException e) {
-    	    			    if (e == null) {
-    	    			    //loginsignupClick(v);
-    	    			    	AlertDialog successfuluser = new AlertDialog.Builder(SignUpActivity.this)
-    	    					.setTitle("you are now a bulletin user")
-    	    			    	.show();
-    	    			    } else {
-    	    			    	//
-    	    			    	Log.d("error", e.toString());
-    	    			    	AlertDialog repeatusernameorpassword = new AlertDialog.Builder(SignUpActivity.this)
-    	    					.setTitle("this username or email address is already in use")
-    	    			    	.show();
-    	    			    }
-    	    			  }
+//    	    			public void done(ParseException e) {
+//    	    				
+//    	    				if (e == null) {
+//    	    			    	
+//    	    			    	loginsignupClick(v);
+//    	    			    	AlertDialog successfuluser = new AlertDialog.Builder(SignUpActivity.this)
+//    	    					.setTitle("you are now a bulletin user")
+//    	    			    	.show();
+//    	    			    } else {
+//    	    			    	//
+//    	    			    	Log.d("error", e.toString());
+//    	    			    	AlertDialog repeatusernameorpassword = new AlertDialog.Builder(SignUpActivity.this)
+//    	    					.setTitle("this username or email address is already in use")
+//    	    			    	.show();
+//    	    			    }
+//    	    			  }
     	    		
     	    			
 
 						@Override
 						public void done(com.parse.ParseException e) {
 							// TODO Auto-generated method stub
+							if (e == null) {
+								
+    	    			    	loginsignupClick(v);
+    	    			    	
+    	    			    } else {
+    	    			    	//
+    	    			    	Log.d("error", e.toString());
+    	    			    	AlertDialog repeatusernameorpassword = new AlertDialog.Builder(SignUpActivity.this)
+    	    					.setTitle("this username/email already exists or the email address is invalid")
+    	    			    	.show();
+    	    			    }
 							
 						}
     	    		});

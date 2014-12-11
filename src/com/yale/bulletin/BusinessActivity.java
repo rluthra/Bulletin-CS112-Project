@@ -3,6 +3,7 @@ package com.yale.bulletin;
 import java.util.List;
 
 import android.support.v7.app.ActionBarActivity;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
@@ -39,7 +40,15 @@ public class BusinessActivity extends ActionBarActivity implements OnClickListen
         Business_event_name = BusinessDataProvider.getBusinessInfo(value);
         adapter = new BusinessEventsAdapter(this, Business_event_name);
         Exp_list_business.setAdapter(adapter);
-
+        if (value.equals("")){
+        	AlertDialog choosecity= new AlertDialog.Builder(BusinessActivity.this)
+			.setTitle("please choose a city to search")
+	    	.show();
+        } else if (Business_event_name.size() == 0){
+        	AlertDialog noevents = new AlertDialog.Builder(BusinessActivity.this)
+			.setTitle("there are no business & finance events posted in " + value)
+	    	.show();
+        }
 		
 		Button businessback = (Button) findViewById(R.id.businessback);
 		businessback.setOnClickListener(new View.OnClickListener() {
